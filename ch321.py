@@ -40,8 +40,12 @@ for line in fp:
 
 
 	#making sure it's NOT ZERO
+	#TODO: consider single digit minutes eg. 12 oh one and 12 oh three
 	if (minute):
-		minute = num2words(minute)
+		if (minute < 10 and minute > 0):
+			minute = "oh " + num2words(minute)
+		else:
+			minute = num2words(minute)
 	else:
 		minute = ""
 
